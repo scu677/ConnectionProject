@@ -2,7 +2,8 @@ import pytest
 from tests.factories import ConnectionFactory, PersonFactory
 
 
-@pytest.mark.xfail
+# @pytest.mark.xfail
+@pytest.fixture
 def test_mutual_friends(db):
     instance = PersonFactory()
     target = PersonFactory()
