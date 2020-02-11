@@ -34,8 +34,7 @@ def test_can_create_person(db, testapp, person_payload):
     pytest.param('first_name', None, 'Field may not be null.', id='missing first name'),
     pytest.param('last_name', None, 'Field may not be null.', id='missing last name'),
     pytest.param('email', None, 'Field may not be null.', id='missing email'),
-    # pytest.param('email', 'foo@bar', 'Not a valid email address.', id='invalid email',
-    #              marks=pytest.mark.xfail),
+    
 ])
 def test_create_person_validations(db, testapp, person_payload, field, value, error_message):
     person_payload[field] = value
